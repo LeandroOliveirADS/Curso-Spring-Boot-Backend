@@ -3,6 +3,8 @@ package com.leandrooliveira.cursomc.domain;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -10,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.leandrooliveira.cursomc.domain.enums.EstadoPagamento;
 
 @Entity
@@ -17,11 +20,11 @@ import com.leandrooliveira.cursomc.domain.enums.EstadoPagamento;
 public abstract class Pagamento implements Serializable {	
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	
+	@Id	
 	private Integer id;
 	private Integer estado;
 	
+	@JsonBackReference
 	@OneToOne
 	@JoinColumn(name="pedido_id")
 	@MapsId
@@ -36,6 +39,14 @@ public abstract class Pagamento implements Serializable {
 		this.id = id;
 		this.setEstado(estado.getCod());
 		this.pedido = pedido;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public EstadoPagamento getEstado() {
