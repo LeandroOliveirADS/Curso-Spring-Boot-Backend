@@ -1,6 +1,8 @@
-package com.leandrooliveira.cursomc.security;
+package com.leandrooliveira.cursomc.services;
 
 import org.springframework.security.core.context.SecurityContextHolder;
+
+import com.leandrooliveira.cursomc.security.UserSS;
 
 public class UserService {
 

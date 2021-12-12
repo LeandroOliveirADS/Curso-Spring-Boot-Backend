@@ -22,7 +22,6 @@ import com.leandrooliveira.cursomc.dto.ClienteNewDTO;
 import com.leandrooliveira.cursomc.repositories.ClienteRepository;
 import com.leandrooliveira.cursomc.repositories.EnderecoRepository;
 import com.leandrooliveira.cursomc.security.UserSS;
-import com.leandrooliveira.cursomc.security.UserService;
 import com.leandrooliveira.cursomc.services.exceptions.AuthorizationException;
 import com.leandrooliveira.cursomc.services.exceptions.DataIntegrityException;
 import com.leandrooliveira.cursomc.services.exceptions.ObjectNotFoundException;
